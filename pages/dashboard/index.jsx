@@ -1,12 +1,20 @@
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
+// import dynamic from 'next/dynamic'
+// const NoSSR = dynamic(() => import('../../pages/dashboard'), { ssr: false })
+
 
 const Dashboard = ({ data }) => {
   // console.log(data);
 
   return (
     <>
-      <div className="db-col-outer">
-        <h1 className="db-inner-title">Enquiries</h1>
+      {/* <NoSSR /> */}
+      <div className="db-col-outer db-col-diff">
+        <div className="db-col-inner-flex">
+          <h1 className="db-inner-title max-pad">Enquires</h1>
+          <input className="search-input" type="text" placeholder="Search..." />
+          <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+        </div>
         <div className="db-col-inner">
           <div className="db-main">
             <div className="db-filter">
