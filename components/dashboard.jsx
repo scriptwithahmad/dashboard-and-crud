@@ -1,11 +1,9 @@
 import React from "react";
-// import dynamic from 'next/dynamic'
-// const NoSSR = dynamic(() => import('../components/dashboard'), { ssr: false })
+
 
 const Dashboard = () => {
   return (
     <>
-      {/* <NoSSR /> */}
       <div className="db-col-outer db-col-diff">
         <div className="db-col-inner-flex">
           <h1 className="db-inner-title max-pad">Attendance System</h1>
@@ -27,11 +25,28 @@ const Dashboard = () => {
             <div className="db-table-wrapper">
               <table>
                 <tr>
-                  <th>Name</th>
+                  <th>Employee</th>
                   <th>Phone Number</th>
                   <th>Check in</th>
                   <th>Check out</th>
                   <th>Action</th>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="imgNameDiv">
+                      <img
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
+                        alt=""
+                      />
+                      M Ahmad
+                    </div>
+                  </td>
+                  <td>0304 2928555</td>
+                  <td>10:30</td>
+                  <td>7:00</td>
+                  <td>
+                    <button className="actionBtn">Proceed</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>

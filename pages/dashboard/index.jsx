@@ -9,6 +9,7 @@ const Dashboard = ({ data }) => {
   return (
     <>
       {/* <NoSSR /> */}
+
       <div className="db-col-outer db-col-diff">
         <div className="db-col-inner-flex">
           <h1 className="db-inner-title max-pad">Enquires</h1>

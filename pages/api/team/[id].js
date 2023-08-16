@@ -7,32 +7,64 @@ export default async function Handler(req, res) {
   switch (req.method) {
     case "DELETE":
       try {
-        const postId = req.query.id; // Assuming _id is the identifier for the post
+        const postId = req.query.id;
         const delPost = await teamModel.findByIdAndDelete(postId);
 
         if (!delPost) {
           return res.status(404).json({
             success: false,
-            message: "Post not found"
+            message: "Post not found",
           });
         }
 
         return res.status(200).json({
           success: true,
-          message: "Post Successfully Deleted"
+          message: "Post Successfully Deleted",
         });
       } catch (error) {
         console.error(error);
         return res.status(500).json({
           success: false,
-          message: "An error occurred"
+          message: "Internel Server Error",
+        });
+      }
+      break;
+    //-------------- UPDATE POST --------------//
+    case "PUT":
+      try {
+        const postId = req.query.id;
+        const updateData = req.body;
+
+        const updatedPost = await teamModel.findByIdAndUpdate(
+          postId,
+          updateData,
+          {
+            new: true,
+          }
+        );
+        if (!updatedPost) {
+          return res.status(400).json({
+            success: false,
+            message: "Post not Found!",
+          });
+        }
+        return res.status(200).json({
+          success: true,
+          message: "Post Successfully Updated!",
+          updatedPost: updatedPost,
+        });
+      } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: "Internal Server Error",
         });
       }
 
     default:
       return res.status(405).json({
         success: false,
-        message: "Method not allowed"
+        message: "Method not allowed",
       });
   }
 }

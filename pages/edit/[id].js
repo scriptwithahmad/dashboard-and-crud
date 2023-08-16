@@ -1,14 +1,14 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { toast, Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
 
 const Team = () => {
   const router = useRouter();
-  //   const [name, setName] = useState("");
-  //   const [design, setDesign] = useState("");
-  //   const [avatar, setAvatar] = useState("");
+  console.log(router.query);
+  const { id } = router.query;
+
   const [formData, setFormData] = useState({
     name: "",
     design: "",
@@ -46,17 +46,29 @@ const Team = () => {
   };
 
   //   CLOUDINARY
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`/api/team/${id}`);
+      const data = await res.json();
+
+      // console.log(data)
+      setFormData(data);
+    };
+    fetchData();
+  }, []);
+
   // SUBMIT FORM ON SUBMIT
   const sumbitHandler = async (e) => {
-    e.preventDefault();
     try {
+      e.preventDefault();
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
-      const res = await axios.post("/api/team/", {
+      const res = await axios.put(`/api/team/${id}`, {
         ...formData,
         avatar: imageUrl,
       });
-      toast.success("Team Member Upladed Succesfully!", {
+      toast.success("Post Updated Succesfully!", {
         duration: 2000,
         position: "top-right",
       });
@@ -64,8 +76,8 @@ const Team = () => {
         name: "",
         design: "",
       });
+      router.push("/dash-team");
       setTempImage("");
-      router.push("/");
     } catch (error) {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
@@ -97,7 +109,6 @@ const Team = () => {
             <label htmlFor="design"> Designation </label>
             <input
               placeholder="enter your Designation...."
-              required
               name="design"
               id="design"
               value={formData.design}
@@ -109,7 +120,6 @@ const Team = () => {
               <div className="showImageMain">
                 <div className="imgDiv">
                   <Image
-                    required
                     className="inputImage"
                     width={200}
                     height={200}
@@ -125,7 +135,6 @@ const Team = () => {
             ) : (
               <>
                 <input
-                  required
                   type="file"
                   name="avatar"
                   id="avatar"
@@ -136,7 +145,7 @@ const Team = () => {
                     <img
                       className="defaultImg"
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXp5ZIUWquEoLHqcBFvATwXyfQsiNfV9o_OopJKKuGU1oY7Otw_tlw7lqpYZJIZfB7KuM&usqp=CAU"
-                      alt="image here"
+                      alt="img here"
                     />
                   </div>
                 </label>
@@ -145,7 +154,7 @@ const Team = () => {
             {/* ------------------ CLOUDINARY ----------------- */}
 
             <button type="submit">
-              {loading ? <span className="loading"></span> : "Submit"}
+              {loading ? <span className="loading"></span> : "Update"}
               <i class="arrow fa-solid fa-arrow-right"></i>
             </button>
           </form>

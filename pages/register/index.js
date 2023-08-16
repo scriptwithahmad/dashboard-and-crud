@@ -1,7 +1,9 @@
 import Link from "next/link";
 import axios from "axios";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { useState } from "react";
+import { toast, Toaster } from "react-hot-toast";
+
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
@@ -9,9 +11,9 @@ const RegisterPage = () => {
   const [password, setPassword] = useState("");
 
   //   console.log(name, email, password)
-  const router = Router;
+  const router = useRouter();
   const submitHandler = async (e) => {
-    e.preventDefault;
+    e.preventDefault();
 
     try {
       const { data } = await axios.post("/api/register", {
@@ -19,8 +21,9 @@ const RegisterPage = () => {
         email,
         password,
       });
-      console.log(data);
+      toast.success("User Registered Successfully!")
       router.push("/login")
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +31,8 @@ const RegisterPage = () => {
 
   return (
     <>
-      <form className="form" onClick={submitHandler}>
+    <Toaster /> 
+      <form className="form" onSubmit={submitHandler}>
         <label htmlFor="name">Name: </label>
         <input
           type="text"

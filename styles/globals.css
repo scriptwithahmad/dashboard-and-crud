@@ -103,7 +103,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  padding: 2% 0;
+  /* height: 100vh; */
   width: 100%;
   background-color: #0a121e;
 }
@@ -116,12 +117,32 @@ a {
   border-radius: 8px;
   justify-content: center;
   flex-direction: column;
-  min-width: 30%;
-  max-width: 50%;
+
 }
 .teamMain {
   border: 1px solid #ffffff3d;
-  width: max-content;
+  width: 30%;
+  min-width: 30%;
+}
+
+@media screen and (max-width: 1024px) {
+ .teamMain{
+  width: 45%;
+ }
+}
+@media screen and (max-width: 768px) {
+ .teamMain{
+  width: 50%;
+ }
+ .arrow{
+  display: none;
+ }
+}
+@media screen and (max-width: 425px) {
+ .teamMain{
+  width: 80%;
+ }
+  
 }
 
 .showImageMain {
@@ -172,7 +193,6 @@ a {
 @keyframes move {
   10%,
   90% {
-    color: red;
     transform: translate3d(-1px, 0, 0);
   }
   20%,
@@ -189,12 +209,14 @@ a {
     transform: translate3d(3px, 0, 0);
   }
 }
-
+.defaultImgDiv{
+  display: grid;
+  place-items: center;
+}
 .defaultImg {
   height: 100px;
   width: 100px;
   max-width: 100%;
-  margin: auto;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -222,11 +244,11 @@ textarea {
 
 .main .formMain button {
   padding: 8px;
-  background: #0065f3;
+  background: transparent;
+  border: 1px solid #0065f3;
   color: white;
   border-radius: 8px;
   font-size: 14px;
-  border: none;
   cursor: pointer;
   position: relative;
   margin-top: 12px;
@@ -238,6 +260,7 @@ textarea {
     top: 50%;
     left: 60%;
     transform: translate(-50%, -50%);
+    display: none;
   }
 
   .loading {
@@ -248,24 +271,25 @@ textarea {
     border-radius: 50%;
     height: 20px;
     width: 20px;
-    border: 3px dashed;
+    border: 4px dashed;
     /* border-radius: 100%; */
     animation: loading 0.5s both ease-in-out infinite;
   }
 }
 .main .formMain button:hover {
   opacity: 0.9;
+  background-color: #0065f3;
 }
-.formMain button:hover .arrow{
-
-  animation: myMove .5s ease-in-out 1 both;
+.formMain button:hover .arrow {
+  display: block;
+  animation: myMove 0.5s ease-in-out 1 both;
 }
 @keyframes myMove {
-  from{
+  from {
     left: 60%;
     opacity: 1;
   }
-  to{
+  to {
     left: 80%;
     opacity: 0;
   }
@@ -314,10 +338,10 @@ input[type="radio"] {
   background: #0157ace8;
   position: relative;
 }
-.db-col-inner-flex{
+.db-col-inner-flex {
   position: relative;
 }
-.search-input{
+.search-input {
   width: 40%;
   border: none;
   outline: none;
@@ -327,13 +351,13 @@ input[type="radio"] {
   background: #ffffff;
   padding: 8px 16px 8px 8px;
   border: 1px solid #fff;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   position: absolute;
   top: 50%;
   left: 78%;
   transform: translate(-50%, -50%);
 }
-.searchIcon{
+.searchIcon {
   color: #5a5a5a;
   cursor: pointer;
   padding: 5px 12px;
@@ -343,7 +367,7 @@ input[type="radio"] {
   left: 96%;
   transform: translate(-50%, -50%);
 }
-.search-input:focus{
+.search-input:focus {
   outline: none;
   border: 1px solid #006aff;
 }
@@ -367,7 +391,7 @@ input[type="radio"] {
   border-end-end-radius: 0px;
   border-end-start-radius: 0px;
 }
-.max-pad{
+.max-pad {
   padding: 18px 22px;
 }
 .db-main {
@@ -413,14 +437,14 @@ input[type="radio"] {
   margin-bottom: 8px;
   border-collapse: collapse;
 }
-.db-table-wrapper table .imgNameDiv{
+.db-table-wrapper table .imgNameDiv {
   display: flex;
   gap: 10px;
   align-items: center;
 
-  & img{
-    height: 40px;
-    width: 40px;
+  & img {
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -429,17 +453,17 @@ input[type="radio"] {
 .db-table-wrapper table .checkbox {
   margin-right: 10px;
 }
-.db-table-wrapper .actionBtn{
+.db-table-wrapper .actionBtn {
   border: none;
   outline: none;
   cursor: pointer;
   color: #ffffff;
-  padding: 3px 12px;
+  padding: 6px 12px;
   border-radius: 6px;
-  background: #1866B3;
-  opacity: .9;
+  background: #1866b3;
+  opacity: 0.9;
 }
-.db-table-wrapper .actionBtn:hover{
+.db-table-wrapper .actionBtn:hover {
   opacity: 1;
 }
 .db-table-wrapper th,
@@ -449,12 +473,21 @@ input[type="radio"] {
 }
 .db-table-wrapper table tr th {
   color: black;
-  text-align: left;
+  text-align: center;
   padding: 12px 22px;
   background: #ffffffa6;
 }
+.db-table-wrapper table tr th:first-child {
+  text-align: left;
+}
 .db-table-wrapper table tr td i {
   color: #ff0000b7;
+}
+.db-table-wrapper table tr td {
+  text-align: center;
+}
+.db-table-wrapper table tr td:first-child {
+  text-align: left;
 }
 .db-table-wrapper table tr td .check {
   color: #03b403;
@@ -555,43 +588,6 @@ input[type="radio"] {
   transition: 0.3s ease-in;
 }
 
-/* aplly form  */
-/* 
-
-.form {
-  height: 50vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #00000020;
-
-  & form{
-    display: flex;
-    border: 1px solid #0065f3;
-    flex-direction: column;
-    padding: 3rem 2rem ;
-    border-radius: 8px;
-
-    & input{
-      padding: 4px 8px;
-      border: none;
-    }
-    
-    & label{
-      margin-bottom: 4px;
-      font-size: 14px;
-    }
-
-    & button{
-      border: none;
-      background: linear-gradient(34deg, #0000ff6e, #8000806e);
-      color: white;
-      padding: 3px;
-    }
-  }
-} */
-
 .form-outer {
   background-color: rebeccapurple;
 
@@ -687,3 +683,164 @@ input[type="radio"] {
 }
 
 /* Team Member */
+
+.backCover {
+  background: linear-gradient(90deg, #fafafa 20px, transparent 1%) 50%,
+    linear-gradient(#fafafa 20px, transparent 1%) 50%, #c7c4c4;
+  background-size: 22px 22px;
+  padding: 40px 0;
+  max-height: 100%;
+}
+
+.dash-wrapper {
+  margin: 0 6%;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 0 20px 0 rgba(28, 9, 80, 0.15);
+}
+.filterBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .innerInput {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+
+    & input {
+      width: 100%;
+      font-size: 14px;
+      color: darkcyan;
+      margin-right: 70px;
+      border-radius: 8px;
+      padding: 12px 85px 12px 8px;
+      border: 1px solid #00000020;
+    }
+    & :focus {
+      outline: none;
+      font-size: 14px;
+      border: 1px solid darkcyan;
+    }
+    & button {
+      background-color: darkcyan;
+      padding: 8px 16px;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      position: absolute;
+      top: 45%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+    }
+    & :hover {
+      opacity: 0.9;
+    }
+  }
+}
+.dash-wrapper .mainTitle {
+  color: #444;
+  padding: 0 6%;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 14px 12px;
+}
+.dash-wrapper .mainTitle span {
+  color: darkcyan;
+}
+
+.cate-buttons {
+  gap: 10px;
+  margin: 1% 0;
+  padding: 0 6%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  & button {
+    padding: 6px;
+    flex-grow: 1;
+    font-size: 15px;
+    color: #292d34;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    background-color: #00000023;
+  }
+  & :hover {
+    background-color: darkcyan;
+    color: white;
+  }
+}
+
+.dasboard-Main {
+  height: 100%;
+  padding: 1% 6% 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+}
+.das-col {
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  border: 1px solid #00000020;
+}
+.das-sub-col {
+  gap: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.das-col .das-sub-col .dasImgMain {
+  height: 100px;
+  width: 130px;
+}
+.das-col .das-sub-col .das-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.das-sub-col .das-info {
+  line-height: 2;
+}
+.das-col .das-info .cate {
+  line-height: normal;
+}
+.das-col .das-info .title {
+  font-size: 18px;
+  font-weight: 600;
+  max-width: 30vw;
+  line-height: 1.4;
+}
+.das-col .action {
+  margin-right: 18px;
+}
+.das-col .action i {
+  color: #00000080;
+  margin: 8px;
+}
+.das-col .action i:nth-child(1) {
+  color: #333;
+}
+.das-col .action i:nth-child(2) {
+  color: blue;
+}
+.das-col .action i:nth-child(3) {
+  color: red;
+}
+.das-col .action i:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* Dashboard  */
