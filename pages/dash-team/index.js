@@ -14,26 +14,30 @@ const DashTeam = ({ data }) => {
     setQuery(e.target.value);
   };
 
-
   const router = useRouter();
   const delPost = async (id) => {
     // console.log(id)
     try {
-      if (window.confirm("Do you wnat to Delete this Post") === true) {
+      if (window.confirm("Do you wnat to Delete this Member") === true) {
         const res = await fetch(`/api/team/${id}`, {
           method: "DELETE",
         });
-        if ( toast.success("Post is Delete Successfully", { duration: 2000, position: "top-right", })) {
-          router.push("/dash-team");
+        if (
+          toast.success("Team Member is Delete Successfully", {
+            duration: 2000,
+            position: "top-right",
+          })
+        ) {
+          router.push("/");
         } else {
           toast.error("Something went Wrong");
         }
       }
     } catch (error) {
       console.log(error);
+      toast.error(error?.message)
     }
   };
-
 
   const handleSearch = () => {
     const filteredData = data.teamData.filter(
@@ -49,7 +53,6 @@ const DashTeam = ({ data }) => {
       handleSearch();
     }
   };
-
 
   return (
     <div>
@@ -73,45 +76,45 @@ const DashTeam = ({ data }) => {
           </div>
 
           <div className="dasboard-Main">
-          {fData.length > 0 ? (
-          fData.map((v) => {
-            return (
-              <div key={v._id} className="das-col">
-                <div className="das-sub-col">
-                  <div className="dasImgMain">
-                    <Image
-                      src={v.avatar}
-                      alt="Image Alt"
-                      width={200}
-                      height={200}
-                      className="das-img"
-                    />
+            {fData.length > 0 ? (
+              fData.map((v) => {
+                return (
+                  <div key={v._id} className="das-col">
+                    <div className="das-sub-col">
+                      <div className="dasImgMain">
+                        <Image
+                          src={v.avatar}
+                          alt="Image Alt"
+                          width={200}
+                          height={200}
+                          className="das-img"
+                        />
+                      </div>
+                      <div className="das-info">
+                        <h1 className="title"> {v.name} </h1>
+                        <p style={{ display: "inline-block" }} className="cate">
+                          {v.design}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="action">
+                      <Link href={"/"}>
+                        <i class="fa-solid fa-eye"></i>
+                      </Link>
+                      <Link href={`/edit/${v._id}`}>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </Link>
+                      <i
+                        onClick={() => delPost(v._id)}
+                        class="fa-solid fa-trash"
+                      ></i>
+                    </div>
                   </div>
-                  <div className="das-info">
-                    <h1 className="title"> {v.name} </h1>
-                    <p style={{ display: "inline-block" }} className="cate">
-                      {v.design}
-                    </p>
-                  </div>
-                </div>
-                <div className="action">
-                  <Link href={"/"}>
-                    <i class="fa-solid fa-eye"></i>
-                  </Link>
-                  <Link href={`/edit/${v._id}`}>
-                    <i class="fa-solid fa-pen-to-square"></i>
-                  </Link>
-                  <i
-                    onClick={() => delPost(v._id)}
-                    class="fa-solid fa-trash"
-                  ></i>
-                </div>
-              </div>
-            );
-          })
-        ) : (
-          <p>No posts found.</p> // Display this message if no matching posts
-        )}
+                );
+              })
+            ) : (
+              <p>No posts found.</p> // Display this message if no matching posts
+            )}
           </div>
         </div>
       </div>

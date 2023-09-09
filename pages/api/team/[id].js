@@ -13,13 +13,13 @@ export default async function Handler(req, res) {
         if (!delPost) {
           return res.status(404).json({
             success: false,
-            message: "Post not found",
+            message: "Team Member not found",
           });
         }
 
         return res.status(200).json({
           success: true,
-          message: "Post Successfully Deleted",
+          message: "Team Member Successfully Deleted",
         });
       } catch (error) {
         console.error(error);
@@ -45,12 +45,12 @@ export default async function Handler(req, res) {
         if (!updatedPost) {
           return res.status(400).json({
             success: false,
-            message: "Post not Found!",
+            message: "Team Member not Found!",
           });
         }
         return res.status(200).json({
           success: true,
-          message: "Post Successfully Updated!",
+          message: "Team Member Successfully Updated!",
           updatedPost: updatedPost,
         });
       } catch (error) {

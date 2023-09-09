@@ -56,7 +56,7 @@ const Team = () => {
         ...formData,
         avatar: imageUrl,
       });
-      toast.success("Team Member Upladed Succesfully!", {
+      toast.success("Team Member Added Succesfully!", {
         duration: 2000,
         position: "top-right",
       });

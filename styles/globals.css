@@ -117,7 +117,6 @@ a {
   border-radius: 8px;
   justify-content: center;
   flex-direction: column;
-
 }
 .teamMain {
   border: 1px solid #ffffff3d;
@@ -126,23 +125,22 @@ a {
 }
 
 @media screen and (max-width: 1024px) {
- .teamMain{
-  width: 45%;
- }
+  .teamMain {
+    width: 45%;
+  }
 }
 @media screen and (max-width: 768px) {
- .teamMain{
-  width: 50%;
- }
- .arrow{
-  display: none;
- }
+  .teamMain {
+    width: 50%;
+  }
+  .arrow {
+    display: none;
+  }
 }
 @media screen and (max-width: 425px) {
- .teamMain{
-  width: 80%;
- }
-  
+  .teamMain {
+    width: 80%;
+  }
 }
 
 .showImageMain {
@@ -209,7 +207,7 @@ a {
     transform: translate3d(3px, 0, 0);
   }
 }
-.defaultImgDiv{
+.defaultImgDiv {
   display: grid;
   place-items: center;
 }
@@ -643,7 +641,7 @@ input[type="radio"] {
     max-width: 1200px;
     margin: auto;
     display: grid;
-    gap: 20px;
+    gap: 10px;
     grid-template-columns: repeat(3, 1fr);
 
     .card {
@@ -678,6 +676,16 @@ input[type="radio"] {
           font-weight: 400;
         }
       }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .team-col-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .team-col-grid {
+      grid-template-columns: 1fr;
     }
   }
 }
@@ -781,7 +789,7 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  display: grid; 
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
 }
 .das-col {
