@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -852,3 +856,146 @@ input[type="radio"] {
 }
 
 /* Dashboard  */
+/* Navbar  */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  color: #444;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.nav-left .logo img {
+  width: 140px;
+}
+.nav-left .logo img {
+  width: 140px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li {
+  cursor: pointer;
+  margin-left: 18px;
+}
+
+.nav-links .mobileResBtn{
+  display: none;
+}
+
+.menu-icon {
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 15;
+}
+
+.menu-icon .apllyBtn {
+  width: max-content;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #0065f3;
+  cursor: pointer;
+  border: 1px solid #0065f3;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s linear;
+}
+.menu-icon .apllyBtn:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+.bar {
+  display: none;
+  width: 25px;
+  height: 3px;
+  background-color: #444;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 50%;
+    height: 90vh;
+    transition: .3s;
+    z-index: 10;
+  }
+
+  .open .nav-links {
+    display: flex;
+    text-align: left;
+    padding: 40px 10px;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .menu-icon .bar {
+    display: block;
+  }
+
+  .menu-icon .apllyBtn{
+    display: none;
+  }
+
+  .mobileResBtn {
+    margin: 4px 14px;
+    width: max-content;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: #0065f3;
+    cursor: pointer;
+    border: 1px solid #0065f3;
+  }
+  .mobileResBtn:hover {
+    color: white;
+    background-color: #007bff;
+  }
+
+  .slider {
+    position: absolute;
+    top: 75px;
+    left: -100%;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: left 0.3s;
+    z-index: 5;
+  }
+
+  .open .slider {
+    left: 0%;
+  }
+}

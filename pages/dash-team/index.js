@@ -18,7 +18,7 @@ const DashTeam = ({ data }) => {
   const delPost = async (id) => {
     // console.log(id)
     try {
-      if (window.confirm("Do you wnat to Delete this Member") === true) {
+      if (window.confirm("Do you want to Delete this Member") === true) {
         const res = await fetch(`/api/team/${id}`, {
           method: "DELETE",
         });

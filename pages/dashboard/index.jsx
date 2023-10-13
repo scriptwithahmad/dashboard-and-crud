@@ -2,7 +2,6 @@ import ReactHTMLTableToExcel from "react-html-table-to-excel";
 // import dynamic from 'next/dynamic'
 // const NoSSR = dynamic(() => import('../../pages/dashboard'), { ssr: false })
 
-
 const Dashboard = ({ data }) => {
   // console.log(data);
 
@@ -30,38 +29,42 @@ const Dashboard = ({ data }) => {
             </div>
             <div className="db-table-wrapper">
               <table id="table">
-                <tr>
-                  <th>
-                    <input className="checkbox" type="checkbox" /> Date
-                  </th>
-                  <th>Status</th>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Test</th>
-                  <th>Countries</th>
-                  <th>Mobile</th>
-                  <th>City</th>
-                  <th>Course</th>
-                </tr>
-                {data?.map((v) => {
-                  return (
-                    <tr>
-                      <td>
-                        <input className="checkbox" type="checkbox" /> {v.id}
-                      </td>
-                      <td className="t-dot">{v.username}</td>
-                      <td className="t-name">{v.name}</td>
-                      <td>Web</td>
-                      <td>
-                        <i class="fa-solid fa-xmark"></i>
-                      </td>
-                      <td>{v?.address.city}</td>
-                      <td>{v?.address?.zipcode}</td>
-                      <td>{v?.address?.street}</td>
-                      <td>{v?.address?.suite}</td>
-                    </tr>
-                  );
-                })}
+                <thead>
+                  <tr>
+                    <th>
+                      <input className="checkbox" type="checkbox" /> Date
+                    </th>
+                    <th>Status</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Test</th>
+                    <th>Countries</th>
+                    <th>Mobile</th>
+                    <th>City</th>
+                    <th>Course</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data?.map((v) => {
+                    return (
+                      <tr>
+                        <td>
+                          <input className="checkbox" type="checkbox" /> {v.id}
+                        </td>
+                        <td className="t-dot">{v.username}</td>
+                        <td className="t-name">{v.name}</td>
+                        <td>Web</td>
+                        <td>
+                          <i class="fa-solid fa-xmark"></i>
+                        </td>
+                        <td>{v?.address.city}</td>
+                        <td>{v?.address?.zipcode}</td>
+                        <td>{v?.address?.street}</td>
+                        <td>{v?.address?.suite}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
               </table>
             </div>
           </div>

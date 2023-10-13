@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Dashboard = () => {
   return (
     <>
@@ -24,115 +23,119 @@ const Dashboard = () => {
             </div>
             <div className="db-table-wrapper">
               <table>
-                <tr>
-                  <th>Employee</th>
-                  <th>Phone Number</th>
-                  <th>Check in</th>
-                  <th>Check out</th>
-                  <th>Action</th>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="imgNameDiv">
-                      <img
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
-                        alt=""
-                      />
-                      M Ahmad
-                    </div>
-                  </td>
-                  <td>0304 2928555</td>
-                  <td>10:30</td>
-                  <td>7:00</td>
-                  <td>
-                    <button className="actionBtn">Proceed</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="imgNameDiv">
-                      <img
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
-                        alt=""
-                      />
-                      M Ahmad
-                    </div>
-                  </td>
-                  <td>0304 2928555</td>
-                  <td>10:30</td>
-                  <td>7:00</td>
-                  <td>
-                    <button className="actionBtn">Proceed</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="imgNameDiv">
-                      <img
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
-                        alt=""
-                      />
-                      M Ahmad
-                    </div>
-                  </td>
-                  <td>0304 2928555</td>
-                  <td>10:30</td>
-                  <td>7:00</td>
-                  <td>
-                    <button className="actionBtn">Proceed</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="imgNameDiv">
-                      <img
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
-                        alt=""
-                      />
-                      M Ahmad
-                    </div>
-                  </td>
-                  <td>0304 2928555</td>
-                  <td>10:30</td>
-                  <td>7:00</td>
-                  <td>
-                    <button className="actionBtn">Proceed</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="imgNameDiv">
-                      <img
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
-                        alt=""
-                      />
-                      M Ahmad
-                    </div>
-                  </td>
-                  <td>0304 2928555</td>
-                  <td>10:30</td>
-                  <td>7:00</td>
-                  <td>
-                    <button className="actionBtn">Proceed</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="imgNameDiv">
-                      <img
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
-                        alt=""
-                      />
-                      M Ahmad
-                    </div>
-                  </td>
-                  <td>0304 2928555</td>
-                  <td>10:30</td>
-                  <td>7:00</td>
-                  <td>
-                    <button className="actionBtn">Proceed</button>
-                  </td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Phone Number</th>
+                    <th>Check in</th>
+                    <th>Check out</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div className="imgNameDiv">
+                        <img
+                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
+                          alt=""
+                        />
+                        M Ahmad
+                      </div>
+                    </td>
+                    <td>0304 2928555</td>
+                    <td>10:30</td>
+                    <td>7:00</td>
+                    <td>
+                      <button className="actionBtn">Proceed</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div className="imgNameDiv">
+                        <img
+                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
+                          alt=""
+                        />
+                        M Ahmad
+                      </div>
+                    </td>
+                    <td>0304 2928555</td>
+                    <td>10:30</td>
+                    <td>7:00</td>
+                    <td>
+                      <button className="actionBtn">Proceed</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div className="imgNameDiv">
+                        <img
+                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
+                          alt=""
+                        />
+                        M Ahmad
+                      </div>
+                    </td>
+                    <td>0304 2928555</td>
+                    <td>10:30</td>
+                    <td>7:00</td>
+                    <td>
+                      <button className="actionBtn">Proceed</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div className="imgNameDiv">
+                        <img
+                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
+                          alt=""
+                        />
+                        M Ahmad
+                      </div>
+                    </td>
+                    <td>0304 2928555</td>
+                    <td>10:30</td>
+                    <td>7:00</td>
+                    <td>
+                      <button className="actionBtn">Proceed</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div className="imgNameDiv">
+                        <img
+                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
+                          alt=""
+                        />
+                        M Ahmad
+                      </div>
+                    </td>
+                    <td>0304 2928555</td>
+                    <td>10:30</td>
+                    <td>7:00</td>
+                    <td>
+                      <button className="actionBtn">Proceed</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div className="imgNameDiv">
+                        <img
+                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikf3Q07dqUb_Jzje1tPpbasLgwSY6WHpTKMM6tyRUS8XaBx_sq_8-7Tx5N4CnDX-CGD-mPh0dIlrD6ZzThgoPDyWnT5iFJTcUkB6dw5gaY8onv5EZdSHjZ6RyZ3pe5QMDm9IytRGnAbTSnctRQ3UaqEDCZuWDsLtWPK57gkNmf8nX3c2LWHZ2FEu0v/s1600/33.jpg"
+                          alt=""
+                        />
+                        M Ahmad
+                      </div>
+                    </td>
+                    <td>0304 2928555</td>
+                    <td>10:30</td>
+                    <td>7:00</td>
+                    <td>
+                      <button className="actionBtn">Proceed</button>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
